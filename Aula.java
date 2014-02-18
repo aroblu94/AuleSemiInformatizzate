@@ -56,7 +56,7 @@ public class Aula {
 	}
 
 	public void prenota(Persona p) {
-		private boolean presente = false;
+		boolean presente = false;
 		if(prenotati.size() < capienzaMax) {
 			for(Persona x : prenotati) {
 				if(x.getEmail().equals(p.getEmail())) {
@@ -72,7 +72,7 @@ public class Aula {
 	}
 
 	public void annullaPrenota(Persona p) {
-		private boolean presente = false;
+		boolean presente = false;
 		for(Persona x : prenotati) {
 			if(x.getEmail().equals(p.getEmail())) {
 					presente = true;
@@ -93,7 +93,7 @@ public class Aula {
 	}
 
 	public void esce(Studente s) {
-		private boolean dentro = false;
+		boolean dentro = false;
 		for (Persona x : presenti) {
 			if(s.getEmail().equals(x.getEmail())) {
 				dentro = true;
@@ -136,15 +136,21 @@ public class Aula {
 	}
 
 	public boolean haPc() {
-		//...
+		if(this.pc==null)
+			return false;
+		else
+			return true;
 	}
 
 	public boolean haProiettore() {
-		//...
+		if(this.proiettore==null)
+			return false;
+		else 
+			return true;
 	}
 
 	public String toString() {
-		private StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new StringBuilder();
 		sb.append("AULA " + nome + "\n");
 		sb.append("(Capienza: " + capienzaMax + " posti \nMinimo prenotazioni: " + minPrenotazioni + ")\n");
 		sb.append("PC " + haPc() + "\n");
