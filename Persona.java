@@ -1,7 +1,7 @@
 public class Persona {
 
 	//CAMPI
-	private String email;
+	private String email = "-";
 	private String nome;
 	private String cognome;
 
@@ -28,14 +28,13 @@ public class Persona {
 		if(e.contains("@"))
 			email = e;
 		else
-			System.out.println("eMail non valida ");
+			System.out.println("email non valida ");
 	}
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Nome: " + nome + "\n");
-		sb.append("Cognome: " + cognome + "\n");
-		sb.append("email: " + email);
+		sb.append(cognome + " " + nome + "\n");
+		sb.append("  email: " + email);
 		return sb.toString();
 	}
 	

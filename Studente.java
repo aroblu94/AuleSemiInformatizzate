@@ -15,10 +15,10 @@ public class Studente extends Persona {
 	}
 
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
+		/*StringBuilder sb = new StringBuilder();
 		sb.append("STUDENTE \n");
-		sb.append("Matricola: " + matricola + "\n");
 		super.toString();
-		return sb.toString();
+		sb.append("Matricola: " + matricola + "\n");*/
+		return super.toString() + "\n  matricola: " + matricola + "\n";
 	}
 }

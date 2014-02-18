@@ -11,7 +11,6 @@ public class Aula {
 	private PC pc;
 	private Docente docente;
 	private String nome;
-	private Proiettore proiettore;
 
 	//COSTRUTTORE
 	public Aula(String n, int max, int min) {
@@ -45,10 +44,6 @@ public class Aula {
 
 	public void assegnaPC(PC pc) {
 		this.pc = pc;
-	}
-	
-	public void assegnaProiettore(Proiettore p) {
-		this.proiettore = p;
 	}
 
 	public void assegnaDocente(Docente doc) {
@@ -142,19 +137,15 @@ public class Aula {
 			return true;
 	}
 
-	public boolean haProiettore() {
-		if(this.proiettore==null)
-			return false;
-		else 
-			return true;
-	}
-
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("AULA " + nome + "\n");
-		sb.append("(Capienza: " + capienzaMax + " posti \nMinimo prenotazioni: " + minPrenotazioni + ")\n");
-		sb.append("PC " + haPc() + "\n");
-		sb.append("Proiettore " + haProiettore() + "\n");
+		sb.append("Capienza: " + capienzaMax + " posti \nMinimo prenotazioni: " + minPrenotazioni + "\n");
+		sb.append("PC: " + haPc() + "\n");
+		if(docente != null)
+			sb.append("Docente: " + docente.toStringAula() + "\n");
+		else
+			sb.append("Docente: -\n");
 		return sb.toString();
 	}
 		
